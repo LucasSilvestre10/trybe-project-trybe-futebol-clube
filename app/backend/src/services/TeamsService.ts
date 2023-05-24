@@ -7,14 +7,10 @@ export default class TeamService {
     return result;
   }
 
-  static async getById(id:number): Promise<Team> {
+  static async getById(id:number) {
     const result = await Team.findOne({
       where: { id },
     });
-
-    if (!result) {
-      throw new Error('Team Not Found');
-    }
 
     return result;
   }

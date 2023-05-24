@@ -97,6 +97,7 @@ class MatchService {
     if (homeTeamId === awayTeamId) {
       throw new UnprocessingException('It is not possible to create a match with two equal teams');
     }
+
     const homeTeam = await TeamService.getById(homeTeamId);
     const awayTeam = await TeamService.getById(awayTeamId);
 

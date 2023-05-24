@@ -12,6 +12,9 @@ export default class TeamsController {
   static async getById(request: Request, response: Response):Promise<void> {
     const { id } = request.params;
     const result = await TeamsService.getById(Number(id));
+    if (!result) {
+      throw new Error('Team Not Found');
+    }
     response.status(200).json(result);
   }
 }
