@@ -1,8 +1,20 @@
-export interface IMatch {
-  id: number;
+export interface INewMatch {
   homeTeamId: number;
-  homeTeamdGoals: number;
+  homeTeamGoals: number;
   awayTeamId: number;
-  awayTeamdGoals: number;
+  awayTeamGoals: number;
+}
+
+export interface IMatch extends INewMatch{
+  id: number;
   inProgress: boolean;
+}
+
+export interface IMatchWithTeamName extends IMatch {
+  homeTeam: {
+    teamName: string
+  },
+  awayTeam: {
+    teamName: string
+  },
 }
